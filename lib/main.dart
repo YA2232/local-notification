@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:local_notification/core/helper/app_router.dart';
 import 'package:local_notification/domain/usecase/init_notification_usecase.dart';
-import 'package:local_notification/presentation/home/screens/home_screen.dart';
 import 'package:local_notification/server_locator.dart';
 
 void main() async {
@@ -17,12 +17,10 @@ void initNotification() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      home: const HomeScreen(),
+    return MaterialApp.router(
+      routerConfig: AppRouter.goRouter,
     );
   }
 }

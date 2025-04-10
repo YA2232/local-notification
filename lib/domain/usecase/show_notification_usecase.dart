@@ -6,6 +6,7 @@ import 'package:local_notification/server_locator.dart';
 class ShowNotificationUsecase extends Usecase<void, NotificationParams> {
   @override
   Future<void> call(params) async {
-    await sl<NotificationRepo>().showNotification(params.title, params.body);
+    await sl<NotificationRepo>()
+        .showNotification(params.title, params.body, params.payload);
   }
 }
